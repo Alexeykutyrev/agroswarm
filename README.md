@@ -131,8 +131,6 @@ Built with vanilla JavaScript, WebGL and Three.js. Live demo: [alexeykutyrev.pro
 
 ## Контакты
 
-Автор — Алексей Кутырев (Alexey Kutyrev).
-
 - Email: [alexeykutyrev@gmail.com](mailto:alexeykutyrev@gmail.com)
 - Сайт: [alexeykutyrev.pro](https://alexeykutyrev.pro)
 
