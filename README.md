@@ -10,7 +10,7 @@
 ![Алгоритмы](https://img.shields.io/badge/алгоритмов_роя-18-8e7cc3)
 ![Техника](https://img.shields.io/badge/типов_техники-18-ff8a65)
 
-**Демо:** [alexeykutyrev.pro](https://alexeykutyrev.pro), раздел AgroSwarm. Доступ по паролю, его можно запросить у автора.
+**Демо:** [alexeykutyrev.pro](https://alexeykutyrev.pro), раздел AgroSwarm. Доступ по паролю, его можно запросить по почте [alexeykutyrev@gmail.com](mailto:alexeykutyrev@gmail.com).
 
 ![Опрыскивание яблоневого сада роем агродронов и роботов-опрыскивателей](docs/orchard.png)
 
@@ -25,6 +25,7 @@
 - [Модель симуляции](#модель-симуляции)
 - [Технологии](#технологии)
 - [English](#english)
+- [Контакты](#контакты)
 
 ## Для чего нужен
 
@@ -126,7 +127,16 @@ Key features:
 - **Technology map**: field capacity W = 0.1·B·v·τ, time-utilization coefficient, critical path, required fleet size, inputs, energy and cost, with plan vs. simulation comparison.
 - **Experiments**: batch benchmarking of all algorithms, scalability curves, CSV/JSON export; tutorial, sandbox and challenge modes; first-person and cinematic cameras.
 
-Built with vanilla JavaScript, WebGL and Three.js. Live demo: [alexeykutyrev.pro](https://alexeykutyrev.pro) (password-protected, access on request).
+Built with vanilla JavaScript, WebGL and Three.js. Live demo: [alexeykutyrev.pro](https://alexeykutyrev.pro) (password-protected, access on request: [alexeykutyrev@gmail.com](mailto:alexeykutyrev@gmail.com)).
+
+## Контакты
+
+Автор — Алексей Кутырев (Alexey Kutyrev).
+
+- Email: [alexeykutyrev@gmail.com](mailto:alexeykutyrev@gmail.com)
+- Сайт: [alexeykutyrev.pro](https://alexeykutyrev.pro)
+
+Вопросы, сотрудничество и доступ к демо — по почте.
 
 ---
 
