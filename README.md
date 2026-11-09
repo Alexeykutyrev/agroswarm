@@ -8,7 +8,7 @@
 ![WebGL](https://img.shields.io/badge/WebGL-Three.js-049ef4)
 ![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-f7df1e)
 ![Алгоритмы](https://img.shields.io/badge/алгоритмов_роя-18-8e7cc3)
-![Техника](https://img.shields.io/badge/типов_техники-18-ff8a65)
+![Техника](https://img.shields.io/badge/типов_техники-19-ff8a65)
 
 **Демо:** [alexeykutyrev.pro](https://alexeykutyrev.pro), раздел AgroSwarm. Доступ по паролю, его можно запросить по почте [alexeykutyrev@gmail.com](mailto:alexeykutyrev@gmail.com).
 
@@ -44,10 +44,12 @@
 - Фазы сезона и **рост растений во времени**: операции выполняются только в свой агросрок.
 
 ### Беспилотная техника
-- 18 типов наземных роботов (UGV) и дронов (UAV): от робота-трактора и комбайна до дрона-опылителя и дрона-ретранслятора.
+- 19 типов наземных роботов (UGV) и дронов (UAV): от робота-трактора и комбайна до дрона-опылителя, дрона-ретранслятора и мобильной зарядной станции.
 - Параметры каждого типа: рабочая и транспортная скорость, ширина захвата, мощность, ёмкость АКБ, баки и бункеры, радиус связи, стоимость часа работы.
 - **Проходимость**: габариты машины сравниваются со свободным проездом между кронами; касание крон учитывается в показателях.
-- База с постами обслуживания: заправка, замена АКБ, разгрузка урожая, очереди.
+- **Мобильные зарядные станции (дронопорты)**: наземные платформы с тремя посадочными площадками. Рой станций сам располагается по краям поля возле групп дронов (алгоритм Ллойда на границе поля с отталкиванием станций), дроны выбирают станцию по «ставке» (время полёта + очередь + запас раствора), садятся, автоматически меняют АКБ и дозаправляются. Разряженная станция сама уезжает на базу.
+- **Машинный двор** как в реальном хозяйстве: пункт техобслуживания у поля, навес-гараж с машиноместами, зарядными постами и солнечными панелями, дронопорт с посадочными площадками, мастерская с мойкой, склады СЗР, удобрений и семян, контора, КТП, водонапорная башня, зернохранилище, автовесы на въезде.
+- Детальные 3D-модели техники: колёса с грунтозацепами, датчики (лидар, ГНСС RTK, камеры), плуги, сеялки, штанги опрыскивателей, жатка комбайна, манипуляторы; дроны с лучами, моторами, винтами, огнями и посадочными лыжами.
 
 ### Технологические операции
 Мониторинг (мультиспектральная съёмка, NDVI), вспашка, посев, внесение удобрений, опрыскивание СЗР, прополка, полив, опыление, обрезка, уборка урожая с логистикой: тележки и грузовые дроны забирают урожай у сборщиков.
@@ -82,7 +84,7 @@
 
 ## Техника и культуры
 
-**Наземные роботы (UGV):** робот-трактор, робот-сеялка, робот-разбрасыватель удобрений, робот-опрыскиватель, робот-поливальщик, малый робот-прополщик, универсальная платформа, робот-комбайн, робот-сборщик плодов, робот-обрезчик, транспортный робот-тележка.
+**Наземные роботы (UGV):** робот-трактор, робот-сеялка, робот-разбрасыватель удобрений, робот-опрыскиватель, робот-поливальщик, малый робот-прополщик, универсальная платформа, робот-комбайн, робот-сборщик плодов, робот-обрезчик, транспортный робот-тележка, мобильная зарядная станция (дронопорт) с тремя посадочными площадками.
 
 **Дроны (UAV):** дрон-разведчик с мультиспектральной камерой, дрон-опрыскиватель, дрон-разбрасыватель, дрон-опылитель, дрон-сборщик плодов, тяжёлый грузовой дрон, дрон-ретранслятор связи.
 
@@ -122,6 +124,8 @@ Key features:
 
 - **18 multi-robot task allocation and coordination algorithms**: greedy, Hungarian, auction (Contract Net / SSI), CBBA, consensus, Voronoi/Lloyd coverage, ant colony optimization (ACO), particle swarm optimization (PSO), grey wolf optimizer (GWO), artificial bee colony (ABC), response-threshold model, firefly, Reynolds boids flocking, leader–follower formation, plus baselines.
 - **Mesh networking** with multi-hop routing, packet loss and latency; distributed algorithms only communicate within connected components.
+- **Mobile drone docking stations**: a swarm of ground charging robots positions itself along the field edge (Lloyd's algorithm on the boundary), drones bid for the best station and land for automatic battery swap and refill.
+- **Farm machinery yard**: equipment sheds with charging bays, drone port, workshop, storage, grain silos; detailed 3D models of all machines.
 - **Environment**: wind and gusts, spray drift, rain, day/night cycle, GNSS error, failures and repair, crop growth stages and agronomic time windows.
 - **Precision agriculture**: drone scouting builds a monitoring map, and variable-rate treatment saves agrochemicals.
 - **Technology map**: field capacity W = 0.1·B·v·τ, time-utilization coefficient, critical path, required fleet size, inputs, energy and cost, with plan vs. simulation comparison.
@@ -138,8 +142,8 @@ Built with vanilla JavaScript, WebGL and Three.js. Live demo: [alexeykutyrev.pro
 
 ---
 
-**Ключевые слова:** роевая робототехника, рой роботов, сельскохозяйственные роботы, агроботы, агродроны, беспилотная сельхозтехника, точное земледелие, цифровой двойник поля, симулятор, мультиагентные системы, распределение задач, алгоритмы роя, муравьиный алгоритм, рой частиц, CBBA, аукцион, технологическая карта, умное сельское хозяйство, агро 4.0.
+**Ключевые слова:** зарядная станция для дронов, дронопорт, замена АКБ, роевая робототехника, рой роботов, сельскохозяйственные роботы, агроботы, агродроны, беспилотная сельхозтехника, точное земледелие, цифровой двойник поля, симулятор, мультиагентные системы, распределение задач, алгоритмы роя, муравьиный алгоритм, рой частиц, CBBA, аукцион, технологическая карта, умное сельское хозяйство, агро 4.0.
 
-*Keywords: swarm robotics, agricultural robots, agricultural drones, precision agriculture, digital twin, multi-robot task allocation, multi-agent systems, swarm intelligence, UAV, UGV, smart farming, agriculture 4.0, simulator, Three.js, WebGL.*
+*Keywords: drone docking station, battery swap, swarm robotics, agricultural robots, agricultural drones, precision agriculture, digital twin, multi-robot task allocation, multi-agent systems, swarm intelligence, UAV, UGV, smart farming, agriculture 4.0, simulator, Three.js, WebGL.*
 
 © Alexey Kutyrev
