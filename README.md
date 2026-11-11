@@ -87,7 +87,7 @@
 | Поведенческие | бойды Рейнольдса, лидер–ведомые |
 | Базовые | без координации, случайный поиск (полёты Леви) |
 
-Алгоритм можно менять во время симуляции.
+Алгоритм можно менять во время симуляции. Действует правило «одна наземная машина в междурядье»: алгоритмы распределяют технику по свободным рядам, а машина, которой достался занятый ряд, ждёт на поворотной полосе. Контейнеровозы в ряды не заезжают — сборщик выезжает к торцу ряда и передаёт контейнеры там; погрузчики на дворе отвозят в хранилище только реально привезённые контейнеры.
 
 ## Исследовательский модуль
 
@@ -128,6 +128,7 @@
 - **Fleet sizing:** the fleet is sized automatically from area, operations and agronomic windows, then validated by simulation.
 - **18 coordination algorithms:** greedy, Hungarian, auction (CNP / SSI), CBBA, consensus, Voronoi / Lloyd, ACO, PSO, grey wolf, artificial bee colony, response threshold, firefly, Reynolds flocking, leader–follower and baselines.
 - **Research module:** replicated experiment plans, SVG charts with 95 % confidence intervals, box plots, speed-up curves, Pareto fronts, Kruskal–Wallis and Mann–Whitney tests with Holm correction, export to CSV, SVG, PNG, LaTeX and JSON.
+- **Traffic rules:** one ground machine per alley; machines wait on the headland for an occupied row, bin carriers never enter rows and receive bins at the row end.
 - **Bilingual interface:** Russian and English, including chart labels.
 
 Built with vanilla JavaScript, WebGL and Three.js. Live demo: [alexeykutyrev.pro](https://alexeykutyrev.pro) (password-protected, access on request: [alexeykutyrev@gmail.com](mailto:alexeykutyrev@gmail.com)).
